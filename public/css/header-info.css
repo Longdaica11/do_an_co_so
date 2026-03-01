@@ -1,0 +1,19 @@
+.header-info {
+    display: flex;
+    justify-content: center;   /* căn giữa cả 3 ảnh */
+    align-items: center;
+    gap: 80px;                 /* 👈 khoảng cách GIỮA các ảnh */
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+/* mỗi ảnh */
+.header-item img {
+    width: 250px;              /* 👈 TĂNG KÍCH THƯỚC ẢNH */
+    height: auto;
+}
+
+/* logo to hơn 1 chút */
+.logo img {
+    width: 200px;
+}

@@ -1,0 +1,16 @@
+.profile-wrapper {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* MENU */
+.profile-sidebar {
+    width: 250px;
+}
+
+/* CONTENT */
+.profile-content {
+    flex: 1;
+}

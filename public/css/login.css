@@ -1,0 +1,117 @@
+/* khung ngoài */
+.login-wrapper {
+    min-height: calc(100vh - 60px); /* trừ chiều cao topbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* box đăng nhập */
+.login-box {
+    background: #6bbf59;
+    padding: 40px 50px;
+    width: 420px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    text-align: center;
+
+    transform: translateY(-100px); /* nâng lên 40px */
+}
+
+.login-box h2 {
+    margin-top: -10px;     /* nâng chữ lên */
+    margin-bottom: 25px;  /* tạo khoảng cách với input */
+    color: #fff;
+}
+
+/* input */
+.login-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    outline: none;
+}
+
+/* nút đăng nhập */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #0b6bdc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: #095bb8;
+}
+
+/* quên mật khẩu */
+.forgot {
+    display: block;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+/* nút đăng ký */
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    background: #7CFC00;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-register:hover {
+    background: #6be300;
+}
+
+/* gạch ngăn */
+.divider {
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+    margin: 18px 0;
+}
+
+/* nút đăng ký */
+.btn-register {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #7CFC00;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-register:hover {
+    background: #6be300;
+}
+
+.login-error {
+    color: #ff3b3b;
+    font-size: 13px;         
+    margin-top: 8px;
+    text-align: center;
+    line-height: 1.4;
+}

@@ -1,0 +1,94 @@
+.address-title {
+    text-align: center;
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 25px;
+}
+
+.btn-add {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;      
+    background-color: #4CAF50;
+    color: white;
+    font-weight: 500;       
+    font-size: 14px;        
+    border-radius: 6px;     
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+}
+
+.btn-add i {
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.btn-add:hover {
+    background-color: #3e8e41;
+    transform: translateY(-1px); 
+}
+
+.address-box {
+    border: 2px solid #4CAF50;   /* Viền xanh */
+    border-radius: 8px;          /* Bo cong */
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+/* Khu vực chứa nút */
+.address-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* Style chung cho button */
+.btn-edit-sm,
+.btn-delete-sm,
+.btn-default-sm {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* Nút sửa */
+.btn-edit-sm {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-edit-sm:hover {
+    background-color: #1976D2;
+}
+
+/* Nút xóa */
+.btn-delete-sm {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-delete-sm:hover {
+    background-color: #d32f2f;
+}
+
+/* Nút đặt mặc định */
+.btn-default-sm {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-default-sm:hover {
+    background-color: #388e3c;
+}
+
+/* Form inline để không bị xuống dòng */
+.address-actions form {
+    margin: 0;
+}

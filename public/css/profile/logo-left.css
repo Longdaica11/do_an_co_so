@@ -1,0 +1,13 @@
+/* LOGO BÊN TRÁI – DÙNG CHO PROFILE */
+
+.logo-wrapper.logo-left {
+    display: flex;
+    margin: 20px 0 0px;
+    padding-left: 24px;            /* cách lề trái */
+}
+
+.logo-wrapper.logo-left img {
+    width: 160px;      /* nhỏ hơn logo trang chủ */
+    height: auto;
+}
+
