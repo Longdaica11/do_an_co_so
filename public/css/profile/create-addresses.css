@@ -1,0 +1,87 @@
+/* ===== WRAPPER ===== */
+.profile-content-wrapper {
+    padding: 30px;
+}
+
+/* ===== CARD ===== */
+.profile-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    border-top: 5px solid #4caf50;
+    max-width: 750px;
+}
+
+/* ===== TITLE ===== */
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== FORM ===== */
+.address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABEL MÀU ĐEN */
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* INPUT */
+.form-group input {
+    padding: 11px 14px;
+    border-radius: 8px;
+    border: 1px solid #c8e6c9;
+    font-size: 14px;
+    color: #000;
+    transition: 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #888;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
+}
+
+/* ===== BUTTON ===== */
+.save-btn {
+    background: linear-gradient(135deg, #5cb85c, #4caf50);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76,175,80,0.3);
+}
+
+/* ===== ERROR ===== */
+.error {
+    color: #d32f2f;
+    font-size: 13px;
+    margin-top: 4px;
+}
