@@ -1,7 +1,79 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
-
 @section('content')
+
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/product-card.css') }}">
+
+@include('partials.navbar')
+
+{{-- ===== PHẦN TRÊN: BANNER + SIDEBAR ===== --}}
+<div class="home-wrapper">
+
+    {{-- MAIN - TRÁI --}}
+    <div class="home-main">
+
+        <div class="top-banners">
+            <img src="{{ asset('images/image 69.png') }}">
+            <img src="{{ asset('images/image 70.png') }}">
+            <img src="{{ asset('images/image 68.png') }}">
+        </div>
+
+        <div class="bottom-banner">
+            <img src="{{ asset('images/image 71.png') }}">
+        </div>
+
+    </div>
+
+    {{-- SIDEBAR --}}
+    <div class="home-sidebar">
+        <div class="sidebar-title">
+            Danh mục sản phẩm
+        </div>
+
+        <ul class="sidebar-list">
+            @foreach($categories as $category)
+                @if($category->products->count() > 0)
+                    <li>
+                        <a href="{{ route('category.show', $category->id) }}"
+                           class="category-link 
+                           {{ isset($currentCategory) && $currentCategory->id == $category->id ? 'active-category' : '' }}">
+                            {{ $category->name }}
+                        </a>
+                    </li>
+                @endif
+            @endforeach
+        </ul>
+    </div>
+
+</div>
+
+{{-- ===== PHẦN DƯỚI: PRODUCT ===== --}}
+<div class="product-wrapper">
+
+    <div class="product-section">
+
+        <h2 class="section-title">
+            {{ $currentCategory->name ?? 'Tất cả sản phẩm' }}
+        </h2>
+
+        <div class="product-grid">
+            @forelse($products as $product)
+                <x-product-card :product="$product"/>
+            @empty
+                <p>Không có sản phẩm nào.</p>
+            @endforelse
+        </div>
+
+        @if($products instanceof \Illuminate\Pagination\LengthAwarePaginator)
+            <div class="pagination-wrapper mt-4 d-flex justify-content-center">
+                {{ $products->links('pagination::bootstrap-5') }}
+            </div>
+        @endif
+
+    </div>
+
+</div>
 
 @endsection

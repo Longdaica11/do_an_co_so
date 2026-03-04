@@ -9,13 +9,21 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
-
-        $products = Product::where('status', 1)
-                            ->latest()
-                            ->take(8) // lấy 8 sản phẩm mới
-                            ->get();
-
+        $categories = Category::with('products')->get();
+    
+        $products = Product::latest()->paginate(30); // 30 sản phẩm mỗi trang
+    
         return view('home', compact('categories', 'products'));
+    }
+
+    public function category($id)
+    {
+        $category = Category::with('products')->findOrFail($id);
+
+        return view('home', [
+            'categories' => Category::all(),
+            'products' => $category->products,
+            'currentCategory' => $category
+        ]);
     }
 }

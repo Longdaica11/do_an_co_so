@@ -5,7 +5,7 @@
     <title>Admin - Gym Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS CHÍNH -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/admin/admin.css') }}">
 
     @stack('styles')
@@ -20,26 +20,42 @@
 
         <ul>
             <li><a href="{{ route('admin.products.index') }}">Quản lí sản phẩm</a></li>
-            <li><a href="#">Quản lí danh mục</a></li>
+            <li><a href="{{ route('admin.categories.index') }}">Quản lí danh mục</a></li>
             <li><a href="#">Danh sách người dùng</a></li>
             <li><a href="#">Quản lí đơn hàng</a></li>
             <li><a href="#">Tin nhắn</a></li>
         </ul>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <div class="main-content">
 
-        <!-- HEADER -->
         <div class="admin-header">
-            <h3>Welcome, {{ Auth::user()->name }}</h3>
 
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="btn-logout">
-                    Đăng xuất
-                </button>
-            </form>
+            <div class="admin-title">
+                <h2>Admin Dashboard</h2>
+            </div>
+
+            <div class="admin-user">
+                <div class="user-info" id="userToggle">
+                    <div class="avatar">
+                        {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                    </div>
+                    <span class="username">
+                        {{ Auth::user()->name }}
+                    </span>
+                    <span class="arrow">▼</span>
+                </div>
+
+                <div class="dropdown-menu" id="userDropdown">
+
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Đăng xuất</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
 
         @yield('content')
@@ -47,6 +63,24 @@
     </div>
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.getElementById("userToggle");
+    const dropdown = document.getElementById("userDropdown");
+
+    toggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function () {
+        dropdown.classList.remove("active");
+    });
+
+});
+</script>
 
 </body>
 </html>

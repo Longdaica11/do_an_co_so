@@ -22,11 +22,16 @@
                 <!-- Ảnh -->
                 <div class="image-preview-box">
                     <img src="{{ asset('storage/' . $product->image) }}"
-                         alt="Ảnh sản phẩm">
+                        alt="Ảnh sản phẩm">
 
-                    <input type="file" name="image" class="btn-upload">
+                    <!-- Input ẩn -->
+                    <input type="file" name="image" id="imageUpload" hidden>
+
+                    <!-- Nút xanh -->
+                    <label for="imageUpload" class="btn-upload">
+                        Cập nhật ảnh
+                    </label>
                 </div>
-
                 <!-- Thông tin -->
                 <div class="form-info">
 
@@ -52,6 +57,12 @@
                                 </option>
                             @endforeach
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        <textarea name="description" rows="5">{{ $product->description }}
+                        </textarea>
                     </div>
 
                     <button type="submit" class="btn-submit">

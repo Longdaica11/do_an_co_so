@@ -102,18 +102,18 @@
 }
 
 .profile-user-box {
-    border: 2px solid #6fbf5a;   /* Viền xanh */ 
+    border: 2px solid #6fbf5a;
     padding: 10px;
     background: #fff;
-    margin-bottom: 10px;         /* Cách menu bên dưới */
+    margin-bottom: 10px;
 }
 
-.profile-menu li a { 
+.profile-menu li a {
     text-decoration: none;
     color: inherit;
     display: block;
     padding: 10px;
-} 
+}
 
 /* ===== MENU SIDEBAR ===== */
 .profile-sidebar {
@@ -128,3 +128,17 @@
     padding: 20px;
 }
 
+/* ===== LOGOUT ===== */
+.logout-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #d32f2f;
+    font-weight: 600;
+}

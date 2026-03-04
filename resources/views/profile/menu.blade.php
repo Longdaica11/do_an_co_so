@@ -12,6 +12,7 @@
 
     <div class="profile-menu-box">
         <ul class="profile-menu">
+
             <li>
                 <a href="{{ route('profile.info') }}">
                     <i class="fa fa-user"></i>
@@ -27,11 +28,22 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="{{ route('profile.change-password') }}">
                     <i class="fa fa-lock"></i>
                     Đổi mật khẩu
                 </a>
             </li>
+
+            <li class="logout-item">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="logout-btn">
+                        <i class="fa fa-sign-out-alt"></i>
+                        Đăng xuất
+                    </button>
+                </form>
+            </li>
+
         </ul>
     </div>
 

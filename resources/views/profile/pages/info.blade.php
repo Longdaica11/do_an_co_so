@@ -1,6 +1,6 @@
 @extends('profile.layout')
 
-@section('profile-content')
+@section('content')
 
 <link rel="stylesheet" href="{{ asset('css/profile/info.css') }}">
 

@@ -10,7 +10,7 @@ class ShippingAddressController extends Controller
 {
     public function index()
     {
-        $addresses = Auth::user()->shippingAddresses;
+        $addresses = ShippingAddress::where('user_id', Auth::id())->get();
         return view('profile.addresses.addresses', compact('addresses'));
     }
 
@@ -48,15 +48,17 @@ class ShippingAddressController extends Controller
     public function edit($id)
     {
         $address = ShippingAddress::where('user_id', Auth::id())
-                    ->findOrFail($id);
+                    ->where('id', $id)
+                    ->firstOrFail();
 
-        return view('profile.edit-address', compact('address'));
+        return view('profile.addresses.edit-addresses', compact('address'));
     }
 
     public function update(Request $request, $id)
     {
         $address = ShippingAddress::where('user_id', Auth::id())
-                    ->findOrFail($id);
+                    ->where('id', $id)
+                    ->firstOrFail();
 
         $request->validate([
             'recipient_name' => 'required',
@@ -67,14 +69,14 @@ class ShippingAddressController extends Controller
             'address' => 'required',
         ]);
 
-        $address->update([
-            'recipient_name' => $request->recipient_name,
-            'phone' => $request->phone,
-            'city' => $request->city,
-            'district' => $request->district,
-            'ward' => $request->ward,
-            'address' => $request->address,
-        ]);
+        $address->update($request->only([
+            'recipient_name',
+            'phone',
+            'city',
+            'district',
+            'ward',
+            'address'
+        ]));
 
         return redirect()->route('profile.addresses')
             ->with('success', 'Cập nhật địa chỉ thành công!');
@@ -83,7 +85,8 @@ class ShippingAddressController extends Controller
     public function destroy($id)
     {
         $address = ShippingAddress::where('user_id', Auth::id())
-                    ->findOrFail($id);
+                    ->where('id', $id)
+                    ->firstOrFail();
 
         $address->delete();
 
@@ -91,5 +94,19 @@ class ShippingAddressController extends Controller
             ->with('success', 'Xóa địa chỉ thành công!');
     }
 
+    public function setDefault($id)
+    {
+        $userId = Auth::id();
 
+        // Reset tất cả về false
+        ShippingAddress::where('user_id', $userId)
+            ->update(['is_default' => false]);
+
+        // Set cái được chọn thành true
+        ShippingAddress::where('user_id', $userId)
+            ->where('id', $id)
+            ->update(['is_default' => true]);
+
+        return back()->with('success', 'Đặt làm địa chỉ mặc định thành công!');
+    }
 }

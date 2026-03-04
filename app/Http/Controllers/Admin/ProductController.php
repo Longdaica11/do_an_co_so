@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('category')->get();
+        $products = Product::latest()->paginate(30);
         return view('admin.dashboard', compact('products'));
     }
 
@@ -116,9 +116,14 @@ class ProductController extends Controller
     public function byCategory($slug)
     {
         $category = Category::where('slug', $slug)->firstOrFail();
-        $products = $category->products;
+    
+        $products = $category
+            ->products()
+            ->latest()
+            ->paginate(30);
+    
         $categories = Category::all();
-
+    
         return view('user.products.index', compact('products','categories','category'));
     }
 }

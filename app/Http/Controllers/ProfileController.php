@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -62,5 +64,27 @@ class ProfileController extends Controller
     
         return redirect()->route('profile.info')
             ->with('success', 'Cập nhật thành công!');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:6|confirmed',
+        ]);
+
+        /** @var User $user */
+        $user = Auth::user();
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors([
+                'current_password' => 'Mật khẩu hiện tại không đúng'
+            ]);
+        }
+
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return back()->with('success', 'Đổi mật khẩu thành công!');
     }
 }
