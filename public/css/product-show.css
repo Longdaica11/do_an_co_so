@@ -1,0 +1,124 @@
+/* ===== BACKGROUND ===== */
+
+/* ===== GIỐNG NAVBAR WIDTH ===== */
+.product-page {
+    max-width: 1200px;   /* bằng navbar */
+    margin: 30px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* ===== BOX TRẮNG ===== */
+.product-box {
+    display: flex;
+    background-color: #e8f5e9;    
+    padding: 30px;
+    border-radius: 6px;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* ===== ẢNH ===== */
+.product-image-section {
+    width: 420px;
+    flex-shrink: 0;
+}
+
+.product-image-section img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+/* ===== THÔNG TIN ===== */
+.product-info-section {
+    flex: 1;
+}
+
+/* ===== TÊN ===== */
+.product-name {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* ===== GIÁ ===== */
+.product-price {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ee4d2d;
+    margin-bottom: 20px;
+}
+
+/* ===== MÔ TẢ ===== */
+.product-desc {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* ===== SỐ LƯỢNG ===== */
+.quantity-box {
+    margin-bottom: 20px;
+}
+
+.quantity-box input {
+    width: 70px;
+    padding: 6px;
+    margin-left: 10px;
+}
+
+/* ===== BUTTON ===== */
+.btn-add-cart {
+    background-color: #ee4d2d;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-add-cart:hover {
+    background-color: #d73211;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .product-box {
+        flex-direction: column;
+    }
+
+    .product-image-section {
+        width: 100%;
+    }
+}
+
+.alert-success {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    z-index: 10;
+    animation: fadeSlide 0.3s ease;
+}
+
+/* hiệu ứng mượt */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

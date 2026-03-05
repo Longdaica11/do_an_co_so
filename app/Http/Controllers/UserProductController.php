@@ -17,4 +17,10 @@ class UserProductController extends Controller
 
         return view('shop.category', compact('category', 'products'));
     }
+
+    public function show($id)
+    {
+        $product = \App\Models\Product::findOrFail($id);
+        return view('products.show', compact('product'));
+    }
 }

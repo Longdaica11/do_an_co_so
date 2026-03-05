@@ -1,53 +1,91 @@
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* ===== TOPBAR ===== */
 .topbar {
-    background-color: #5cb85c;
+    background: linear-gradient(135deg, #4CAF50, #43a047);
     color: #fff;
-    padding: 10px 40px;
+    padding: 8px 60px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+
+    font-size: 13px;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ===== LEFT SIDE ===== */
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .topbar-left span {
-    margin-right: 25px;
-    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.95;
+    transition: 0.3s;
 }
 
-.topbar-left i {
-    margin-right: 6px;
+.topbar-left span:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* ===== RIGHT SIDE ===== */
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .topbar-right a {
     color: #fff;
     text-decoration: none;
-    margin-left: 20px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    gap: 6px;
+
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
 }
 
-.topbar-right i {
-    margin-right: 6px;
+/* underline animation */
+.topbar-right a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 1.5px;
+    background: #ffeb3b;
+    transition: 0.3s;
+}
+
+.topbar-right a:hover::after {
+    width: 100%;
 }
 
 .topbar-right a:hover {
-    text-decoration: underline;
+    color: #ffeb3b;
 }
 
+/* ===== USERNAME ===== */
 .username {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .username:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    color: #ffeb3b;
 }
-

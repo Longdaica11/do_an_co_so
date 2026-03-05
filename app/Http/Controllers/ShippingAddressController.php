@@ -93,7 +93,7 @@ class ShippingAddressController extends Controller
         return redirect()->route('profile.addresses')
             ->with('success', 'Xóa địa chỉ thành công!');
     }
-
+    
     public function setDefault($id)
     {
         $userId = Auth::id();
