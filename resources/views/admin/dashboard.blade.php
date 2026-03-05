@@ -2,6 +2,8 @@
 
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('css/admin/dashboard.css') }}">
+
 <div class="product-container">
 
     <div class="product-header">

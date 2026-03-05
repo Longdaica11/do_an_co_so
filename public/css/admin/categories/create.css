@@ -1,65 +1,119 @@
-/* ===== CREATE CATEGORY ===== */
-
-.create-category-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
+/* ===== WRAPPER ===== */
+.create-category-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    margin-top:40px;
 }
 
-.create-category-box {
-    width: 480px;
-    background: #ffffff;
-    padding: 45px;
-    border-radius: 20px;
-    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+/* ===== BOX ===== */
+.create-category-box{
+    width:420px;
+    background:white;
+    padding:35px 40px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    animation:fadeIn 0.4s ease;
 }
 
-.create-category-box h2 {
-    text-align: center;
-    color: #1e7e34;
-    margin-bottom: 30px;
-    font-size: 24px;
+/* ===== TITLE ===== */
+.create-category-box h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#2e7d32;
+    font-weight:600;
 }
 
-.create-category-group {
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
+/* ===== FORM GROUP ===== */
+.create-category-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:20px;
 }
 
-.create-category-group label {
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #1e7e34;
+.create-category-group label{
+    font-weight:600;
+    margin-bottom:8px;
+    color:#2e7d32;
 }
 
-.create-category-group input {
-    padding: 12px 14px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 14px;
-    outline: none;
-    transition: 0.3s;
+/* ===== INPUT ===== */
+.create-category-group input{
+    padding:12px 14px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:14px;
+    transition:all 0.25s ease;
 }
 
-.create-category-group input:focus {
-    border-color: #28a745;
-    box-shadow: 0 0 0 3px rgba(40,167,69,0.2);
+/* focus effect */
+.create-category-group input:focus{
+    outline:none;
+    border-color:#43a047;
+    box-shadow:0 0 0 3px rgba(67,160,71,0.2);
 }
 
-.create-category-btn {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #28a745, #1e7e34);
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
+/* ===== BUTTON ===== */
+.create-category-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#43a047,#2e7d32);
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.25s ease;
+    box-shadow:0 6px 18px rgba(67,160,71,0.3);
 }
 
-.create-category-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(40,167,69,0.35);
+.create-category-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(67,160,71,0.35);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+
+.create-category-box{
+    width:90%;
+    padding:30px;
+}
+
+}
+
+/* ===== BOX ===== */
+.create-category-box{
+    width:420px;
+    background:white;
+    padding:35px 40px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+}
+
+/* ===== HOVER NỔI NHẸ ===== */
+.create-category-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(0,0,0,0.12);
+}
+
+
+/* HOVER INPUT */
+.create-category-group input:hover{
+    border-color:#66bb6a;
+    transform:translateY(-2px);
 }

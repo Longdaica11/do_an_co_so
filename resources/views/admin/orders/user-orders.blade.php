@@ -27,12 +27,12 @@
                 @foreach($orders as $order)
                 <tr>
                     <td>#{{ $order->id }}</td>
-                    <td>{{ number_format($order->total) }} đ</td>
+                    <td>{{ number_format($order->total_price) }} đ</td>
                     <td>
                         @if($order->status == 'pending')
-                            <span class="pending">🟡 Chờ xác nhận</span>
+                            <span class="pending"> Chờ xác nhận</span>
                         @else
-                            <span class="confirmed">🟢 Đã xác nhận</span>
+                            <span class="confirmed"> Đã xác nhận</span>
                         @endif
                     </td>
                     <td>{{ $order->created_at->format('d/m/Y') }}</td>

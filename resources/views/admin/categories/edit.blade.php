@@ -2,7 +2,7 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('css/admin/create-product.css') }}">
+<link rel="stylesheet" href="{{ asset('css/admin/edit-product.css') }}">
 
 <div class="form-wrapper">
     <div class="form-box">

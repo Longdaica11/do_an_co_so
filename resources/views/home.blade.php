@@ -29,19 +29,19 @@
     {{-- SIDEBAR --}}
     <div class="home-sidebar">
         <div class="sidebar-title">
-            Danh mục sản phẩm
+            Danh mục
         </div>
 
         <ul class="sidebar-list">
-        @foreach($categories as $category)
-            <li>
-                <a href="{{ route('category.show', $category->id) }}"
-                class="category-link 
-                {{ isset($currentCategory) && $currentCategory->id == $category->id ? 'active-category' : '' }}">
-                    {{ $category->name }}
-                </a>
-            </li>
-        @endforeach
+            @foreach($categories as $category)
+                <li>
+                    <a href="{{ route('category.show', $category->id) }}"
+                    class="category-link 
+                    {{ isset($currentCategory) && $currentCategory->id == $category->id ? 'active-category' : '' }}">
+                        {{ $category->name }}
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </div>
 
@@ -78,12 +78,6 @@
                 {{ $products->appends(request()->query())->links('pagination::bootstrap-5') }}
             </div>
         @endif
-
-        @isset($categories)
-            @foreach($categories as $category)
-                ...
-            @endforeach
-        @endisset
 
     </div>
 

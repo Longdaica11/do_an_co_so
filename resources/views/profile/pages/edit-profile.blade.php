@@ -81,17 +81,27 @@
 
             <div class="form-group">
                 <label>Giới tính</label>
-                <select name="gender">
-                    <option value="Nam"
-                        {{ $user->gender == 'Nam' ? 'selected' : '' }}>
-                        Nam
-                    </option>
-                    <option value="Nữ"
-                        {{ $user->gender == 'Nữ' ? 'selected' : '' }}>
-                        Nữ
-                    </option>
-                </select>
 
+                <div class="gender-group">
+
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="Nam"
+                            {{ $user->gender == 'Nam' ? 'checked' : '' }}>
+                        <span class="radio-custom"></span>
+                        Nam
+                    </label>
+
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="Nữ"
+                            {{ $user->gender == 'Nữ' ? 'checked' : '' }}>
+                        <span class="radio-custom"></span>
+                        Nữ
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label>Số điện thoại</label>
                 <input type="text" name="phone" 
                     value="{{ old('phone', $user->phone) }}" 
@@ -99,7 +109,8 @@
                 @error('phone')
                     <div class="error-message">{{ $message }}</div>
                 @enderror
-                </div>
+            </div>
+
 
             <button type="submit" class="btn-save">
                 Lưu thay đổi

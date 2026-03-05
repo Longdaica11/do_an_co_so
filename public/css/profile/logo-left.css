@@ -1,13 +1,24 @@
-/* LOGO BÊN TRÁI – DÙNG CHO PROFILE */
+/* ===== LOGO BÊN TRÁI PROFILE ===== */
 
 .logo-wrapper.logo-left {
     display: flex;
-    margin: 20px 0 0px;
-    padding-left: 24px;            /* cách lề trái */
+    align-items: center;
+    margin: 24px 0 10px;
+    padding-left: 24px;
 }
 
+/* khung logo */
 .logo-wrapper.logo-left img {
-    width: 160px;      /* nhỏ hơn logo trang chủ */
+    width: 155px;
     height: auto;
+
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
 }
 
+/* hover mượt */
+.logo-wrapper.logo-left img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}

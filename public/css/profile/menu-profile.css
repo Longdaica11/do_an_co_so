@@ -1,144 +1,116 @@
-/* ===== TITLE NGOÀI KHUNG ===== */
-.profile-page-title {
-    text-align: center;
-    font-size: 28px;
-    color: #6fbf5a;
-}
-
-/* ===== LAYOUT ===== */
-.profile-wrapper {
-    display: flex;
-    gap: 30px;
-    padding: 0 40px 40px;
-}
-
-/* ===== LEFT ===== */
-.profile-left {
-    width: 220px;
-    text-align: center;
-}
-
-.avatar-box {
-    width: 160px;
-    height: 160px;
-    border: 2px solid #6fbf5a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-}
-
-.avatar-box img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-/* ===== CENTER ===== */
-.profile-center {
-    background: transparent;
-    border: none;
-    padding: 0;
-}
-
-/* ===== RIGHT MENU ===== */
-.profile-right {
+/* ===== SIDEBAR PROFILE ===== */
+.profile-right{
     width: 260px;
 }
 
-.profile-menu-box {
-    background: #fff;
-}
-
-/* user info */
-.profile-menu-user {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 14px;
-    border-bottom: 2px solid #6fbf5a;
-}
-
-.profile-menu-user i {
-    font-size: 30px;
-    color: #6fbf5a;
-}
-
-.profile-menu-user .name {
-    font-weight: 600;
-}
-
-.profile-menu-user .role {
-    font-size: 12px;
-    color: #777;
-}
-
-/* menu list */
-.profile-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.profile-menu li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 14px;
-    cursor: pointer;
-    border-bottom: 2px solid #e6e6e6;
-}
-
-.profile-menu li.active {
-    background: #eaeaea;
-    font-weight: 600;
-}
-
-.profile-menu li:hover {
-    background: #f5f5f5;
-}
-
-.profile-menu li:last-child {
-    border-bottom: none;
-}
-
-.profile-user-box {
-    border: 2px solid #6fbf5a;
-    padding: 10px;
-    background: #fff;
-    margin-bottom: 10px;
-}
-
-.profile-menu li a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    padding: 10px;
-}
-
-/* ===== MENU SIDEBAR ===== */
-.profile-sidebar {
-    width: 250px;
-}
-
-/* KHUNG MENU */
-.profile-menu-box {
-    border: 2px solid #4CAF50;
-    border-radius: 8px;
-    background: #fff;
+/* ===== USER BOX ===== */
+.profile-user-box{
+    background: linear-gradient(135deg,#4CAF50,#2e7d32);
     padding: 20px;
+    border-radius: 16px;
+    color: white;
+    margin-bottom: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.profile-menu-user{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-menu-user i{
+    font-size: 40px;
+}
+
+.profile-menu-user .name{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.profile-menu-user .role{
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* ===== MENU BOX ===== */
+.profile-menu-box{
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 10px 0;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.05),
+        0 5px 15px rgba(0,0,0,0.04);
+}
+
+/* ===== MENU LIST ===== */
+.profile-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ===== MENU ITEM ===== */
+.profile-menu li a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 20px;
+
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+}
+
+/* icon */
+.profile-menu li a i{
+    width: 18px;
+    text-align: center;
+    color: #4CAF50;
+}
+
+/* hover */
+.profile-menu li a:hover{
+    background: rgba(76,175,80,0.08);
+    padding-left: 25px;
+    color: #2e7d32;
 }
 
 /* ===== LOGOUT ===== */
-.logout-btn {
+.logout-item{
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.logout-btn{
     width: 100%;
-    background: none;
-    border: none;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 14px;
-    font-size: 15px;
+    gap: 12px;
+
+    padding: 14px 20px;
+
+    background: none;
+    border: none;
     cursor: pointer;
-    color: #d32f2f;
-    font-weight: 600;
+
+    font-size: 15px;
+    color: #e53935;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+}
+
+.logout-btn i{
+    width: 18px;
+}
+
+.logout-btn:hover{
+    background: rgba(229,57,53,0.08);
+    padding-left: 25px;
 }

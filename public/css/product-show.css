@@ -1,124 +1,190 @@
-/* ===== BACKGROUND ===== */
-
-/* ===== GIỐNG NAVBAR WIDTH ===== */
+/* ===============================
+   PAGE WRAPPER
+================================ */
 .product-page {
-    max-width: 1200px;   /* bằng navbar */
-    margin: 30px auto;
+    max-width: 1200px;
+    margin: 50px auto 80px;
     padding: 0 20px;
-    position: relative;
 }
 
-/* ===== BOX TRẮNG ===== */
+/* ===============================
+   SUCCESS MESSAGE
+================================ */
+.alert-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 5px solid #4CAF50;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+   MAIN BOX
+================================ */
 .product-box {
     display: flex;
-    background-color: #e8f5e9;    
-    padding: 30px;
-    border-radius: 6px;
     gap: 50px;
-    align-items: flex-start;
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
 }
 
-/* ===== ẢNH ===== */
+.product-box:hover {
+    transform: translateY(-6px);
+}
+
+/* ===============================
+   IMAGE SECTION
+================================ */
 .product-image-section {
-    width: 420px;
-    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-image-section img {
     width: 100%;
-    border-radius: 6px;
-    object-fit: contain;
+    max-width: 420px;
+    border-radius: 20px;
+    transition: 0.4s ease;
 }
 
-/* ===== THÔNG TIN ===== */
+.product-image-section img:hover {
+    transform: scale(1.06);
+}
+
+/* ===============================
+   INFO SECTION
+================================ */
 .product-info-section {
     flex: 1;
 }
 
-/* ===== TÊN ===== */
 .product-name {
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
-/* ===== GIÁ ===== */
 .product-price {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
-    color: #ee4d2d;
+    color: #2e7d32;
     margin-bottom: 20px;
 }
 
-/* ===== MÔ TẢ ===== */
 .product-desc {
-    font-size: 14px;
     color: #555;
+    line-height: 1.7;
     margin-bottom: 25px;
-    line-height: 1.6;
 }
 
-/* ===== SỐ LƯỢNG ===== */
+/* ===============================
+   QUANTITY
+================================ */
 .quantity-box {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.quantity-box label {
+    font-weight: 600;
+    margin-right: 10px;
 }
 
 .quantity-box input {
-    width: 70px;
-    padding: 6px;
-    margin-left: 10px;
+    width: 80px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    transition: 0.3s;
 }
 
-/* ===== BUTTON ===== */
+.quantity-box input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 8px rgba(76,175,80,0.3);
+}
+
+/* ===============================
+   BUTTON
+================================ */
 .btn-add-cart {
-    background-color: #ee4d2d;
-    color: #fff;
+    background: linear-gradient(135deg, #4CAF50, #43a047);
     border: none;
-    padding: 12px 30px;
-    font-size: 14px;
+    padding: 14px 30px;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(76,175,80,0.3);
 }
 
 .btn-add-cart:hover {
-    background-color: #d73211;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(76,175,80,0.4);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
+.btn-add-cart:active {
+    transform: scale(0.97);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+
     .product-box {
         flex-direction: column;
+        padding: 30px;
+        gap: 30px;
     }
 
-    .product-image-section {
-        width: 100%;
+    .product-image-section img {
+        max-width: 100%;
+    }
+
+    .product-name {
+        font-size: 24px;
+    }
+
+    .product-price {
+        font-size: 22px;
     }
 }
 
-.alert-success {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 14px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    z-index: 10;
-    animation: fadeSlide 0.3s ease;
+.product-box {
+    border: 1px solid rgba(76, 175, 80, 0.15);
 }
 
-/* hiệu ứng mượt */
-@keyframes fadeSlide {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -10px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
+.product-box {
+    backdrop-filter: blur(10px);
+}
+
+.product-box {
+    display: flex;
+    gap: 50px;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 28px;
+
+    /* Shadow sâu hơn */
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.08),
+        0 5px 15px rgba(0,0,0,0.05);
+
+    transition: all 0.4s ease;
+}
+
+.product-box:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.12),
+        0 10px 25px rgba(0,0,0,0.08);
 }

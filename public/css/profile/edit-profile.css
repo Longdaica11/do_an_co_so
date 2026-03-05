@@ -1,98 +1,311 @@
-.btn-change-avatar {
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
+/* ================================
+   PAGE TITLE
+================================ */
+.profile-page-title{
+    text-align:center;
+    font-size:26px;
+    font-weight:700;
+    margin:30px 0 35px;
+    color:#2e7d32;
+    position:relative;
 }
 
-.btn-change-avatar:hover {
-    background-color: #3e8e41;
+.profile-page-title::after{
+    content:"";
+    width:70px;
+    height:3px;
+    background:linear-gradient(90deg,#4CAF50,#2e7d32);
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-10px;
+    border-radius:10px;
 }
 
-/* ẢNH AVATAR */
-.avatar-box img {
-    width: 80%;
-    height: 80%;
-    object-fit: cover;   /* không méo ảnh */
-    display: block;
+
+/* ================================
+   WRAPPER
+================================ */
+.profile-wrapper{
+    width:1100px;
+    margin:auto;
+    display:flex;
+    gap:50px;
+    padding:40px;
+    background:white;
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.05),
+    0 10px 25px rgba(0,0,0,0.04);
+
+    border:1px solid rgba(76,175,80,0.08);
 }
 
-/* Khung bên phải */
-.profile-center {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    width: 100%;
-    max-width: 500px;
-    margin-left: 50px; 
+
+/* ================================
+   LEFT AVATAR
+================================ */
+.profile-left{
+    width:240px;
+    text-align:center;
 }
 
-/* Mỗi nhóm input */
-.form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.avatar-box{
+    width:160px;
+    height:160px;
+    margin:auto;
+    border-radius:50%;
+    overflow:hidden;
+
+    border:4px solid #4CAF50;
+
+    transition:all .35s ease;
+
+    box-shadow:
+    0 12px 30px rgba(76,175,80,0.25);
 }
 
-/* Label */
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #333;
+.avatar-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* Input + Select */
+/* hover */
+.avatar-box:hover{
+    transform:translateY(-6px) scale(1.03);
+
+    box-shadow:
+    0 18px 45px rgba(76,175,80,0.35);
+}
+
+.text-avt{
+    margin-top:12px;
+    color:#666;
+    font-size:14px;
+}
+
+
+/* ================================
+   BUTTON CHANGE AVATAR
+================================ */
+.btn-change-avatar{
+    margin-top:15px;
+    padding:9px 18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+
+    font-weight:500;
+    font-size:14px;
+
+    color:white;
+
+    background:linear-gradient(135deg,#4CAF50,#2e7d32);
+
+    transition:all .25s ease;
+
+    box-shadow:
+    0 6px 15px rgba(76,175,80,0.25);
+}
+
+.btn-change-avatar:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 20px rgba(76,175,80,0.35);
+}
+
+
+/* ================================
+   CENTER FORM
+================================ */
+.profile-center{
+    flex:1;
+}
+
+
+/* ================================
+   FORM GROUP
+================================ */
+.form-group{
+    margin-bottom:20px;
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-weight:600;
+    margin-bottom:6px;
+    color:#333;
+    font-size:14px;
+}
+
+
+/* ================================
+   INPUT
+================================ */
 .form-group input,
-.form-group select {
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: 0.3s ease;
+.form-group select{
+
+    padding:11px 12px;
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    font-size:14px;
+
+    transition:all .25s ease;
 }
 
-/* Hiệu ứng focus */
+
+/* hover */
+.form-group input:hover,
+.form-group select:hover{
+    border-color:#4CAF50;
+}
+
+
+/* focus animation */
 .form-group input:focus,
-.form-group select:focus {
-    border-color: #4CAF50;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+.form-group select:focus{
+
+    outline:none;
+
+    border-color:#4CAF50;
+
+    box-shadow:
+    0 0 0 3px rgba(76,175,80,0.15);
+
+    transform:translateY(-1px);
 }
 
-/* Nút lưu */
-.btn-save {
-    margin-top: 15px;
-    padding: 12px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-    width: 100%;
+
+/* ================================
+   ERROR
+================================ */
+.error-message{
+    margin-top:5px;
+    font-size:13px;
+    color:#e53935;
 }
 
-/* Hover nút */
-.btn-save:hover {
-    background-color: #3e8e41;
-    transform: translateY(-1px);
+
+/* ================================
+   SAVE BUTTON
+================================ */
+.btn-save{
+
+    margin-top:15px;
+
+    padding:12px 26px;
+
+    border:none;
+    border-radius:10px;
+
+    color:white;
+    font-weight:600;
+    font-size:15px;
+
+    cursor:pointer;
+
+    background:linear-gradient(135deg,#4CAF50,#2e7d32);
+
+    transition:all .3s ease;
+
+    box-shadow:
+    0 10px 25px rgba(76,175,80,0.25);
 }
 
-.error-message {
-    color: red;
-    font-size: 15px;
-    margin-top: 5px;
-    margin-left: 15px;
+/* hover */
+.btn-save:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 16px 40px rgba(76,175,80,0.35);
 }
 
-.text-avt {
-    margin-top: 12px;
-    font-size: 14px;
+/* ================================
+   GENDER RADIO
+================================ */
+
+.gender-group{
+    display:flex;
+    gap:25px;
+    margin-top:5px;
+}
+
+.gender-option{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:14px;
+    font-weight:500;
+
+    cursor:pointer;
+    position:relative;
+
+    color:#333;
+}
+
+/* Ẩn radio mặc định */
+.gender-option input{
+    display:none;
+}
+
+/* Vòng tròn */
+.radio-custom{
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+    border:2px solid #bbb;
+
+    position:relative;
+
+    transition:all .25s ease;
+}
+
+/* Chấm bên trong */
+.radio-custom::after{
+
+    content:"";
+
+    width:10px;
+    height:10px;
+
+    background:#4CAF50;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    transition:all .25s ease;
+}
+
+/* Khi tick */
+.gender-option input:checked + .radio-custom{
+
+    border-color:#4CAF50;
+
+    box-shadow:
+    0 0 0 3px rgba(76,175,80,0.15);
+}
+
+.gender-option input:checked + .radio-custom::after{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+/* Hover */
+.gender-option:hover .radio-custom{
+    border-color:#4CAF50;
 }

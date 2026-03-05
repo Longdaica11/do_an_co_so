@@ -10,7 +10,7 @@
 .topbar {
     background: linear-gradient(135deg, #4CAF50, #43a047);
     color: #fff;
-    padding: 8px 60px;
+    padding: 12px 60px;
 
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,13 @@
     font-size: 13px;
     letter-spacing: 0.3px;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 0 0 18px 18px;
+
+    box-shadow:
+        0 8px 20px rgba(76,175,80,0.25),
+        0 4px 10px rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
 }
 
 /* ===== LEFT SIDE ===== */
@@ -33,20 +39,23 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    opacity: 0.95;
-    transition: 0.3s;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
 .topbar-left span:hover {
-    opacity: 1;
-    transform: translateY(-1px);
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 /* ===== RIGHT SIDE ===== */
 .topbar-right {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .topbar-right a {
@@ -58,7 +67,11 @@
 
     font-weight: 500;
     position: relative;
-    transition: 0.3s;
+
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
 }
 
 /* underline animation */
@@ -66,19 +79,29 @@
     content: "";
     position: absolute;
     bottom: -4px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0%;
-    height: 1.5px;
+    height: 2px;
     background: #ffeb3b;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .topbar-right a:hover::after {
-    width: 100%;
+    width: 70%;
 }
 
+/* hover nổi + nền */
 .topbar-right a:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     color: #ffeb3b;
+}
+
+/* click effect */
+.topbar-right a:active {
+    transform: scale(0.95);
 }
 
 /* ===== USERNAME ===== */
@@ -86,6 +109,3 @@
     font-weight: 600;
 }
 
-.username:hover {
-    color: #ffeb3b;
-}

@@ -1,111 +1,144 @@
-/* ===== CONTAINER CHÍNH (avatar + info) ===== */
-.profile-main {
+/* ===== PAGE TITLE ===== */
+.profile-page-title{
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #2e7d32;
+}
+
+/* ===== LAYOUT CHÍNH ===== */
+.profile-main{
     display: flex;
-    gap: 40px;
+    gap: 50px;
     align-items: flex-start;
+
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.06),
+        0 8px 20px rgba(0,0,0,0.04);
+
+    transition: all 0.3s ease;
 }
 
-/* ===== AVATAR ===== */
-.profile-left {
-    width: 200px;
+.profile-main:hover{
+    transform: translateY(-2px);
+}
+
+/* ===== LEFT - AVATAR ===== */
+.profile-left{
+    width: 220px;
     text-align: center;
-    margin-top: 60px
 }
 
-.avatar-box {
+.avatar-box{
     width: 150px;
     height: 150px;
-    border: 2px solid #4CAF50;
+    margin: auto;
+
+    border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto;
-    border-radius: 8px;
+
+    border: 4px solid #4CAF50;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    transition: all 0.3s ease;
 }
 
-.avatar-box img {
+.avatar-box img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.text-avt {
+.avatar-box:hover{
+    transform: scale(1.05);
+}
+
+.text-avt{
     margin-top: 12px;
+    color: #777;
     font-size: 14px;
-    color: #666;
 }
 
-/* ===== PHẦN BÊN PHẢI ===== */
-.profile-right {
+/* ===== RIGHT ===== */
+.profile-right{
     flex: 1;
-}
-
-/* ===== TITLE ===== */
-.profile-page-title {
-    font-size: 26px;
-    font-weight: 600;
-    color: #4CAF50;
-    margin-bottom: 25px;
 }
 
 /* ===== BOX THÔNG TIN ===== */
-.profile-info-box {
-    border: 2px solid #4CAF50;
-    padding: 28px 35px;
-    background: #fff;
+.profile-info-box{
+    background: #f9faf9;
+    border-radius: 14px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* ===== ROW ===== */
+.profile-info-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eee;
+
+    transition: all 0.2s ease;
+}
+
+.profile-info-row:last-child{
+    border-bottom: none;
+}
+
+/* hover nhẹ */
+.profile-info-row:hover{
+    background: rgba(76,175,80,0.05);
+    padding-left: 10px;
     border-radius: 8px;
 }
 
-/* ===== TỪNG DÒNG ===== */
-.profile-info-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.profile-info-row:last-child {
-    margin-bottom: 0;
-}
-
-.profile-info-row .label {
-    width: 180px;
+/* ===== LABEL ===== */
+.label{
     font-weight: 600;
-    color: #333;
+    color: #666;
 }
 
-.profile-info-row .value {
-    flex: 1;
-    color: #555;
+/* ===== VALUE ===== */
+.value{
+    font-weight: 500;
+    color: #222;
 }
 
-/* Nếu trống */
-.profile-info-row .value:empty::before {
-    content: "Chưa khai báo";
-    color: #999;
-    font-style: italic;
+/* ===== BUTTON EDIT ===== */
+.profile-edit-btn{
+    margin-top: 25px;
 }
 
-/* ===== NÚT CHỈNH SỬA ===== */
-.profile-edit-btn {
-    margin-top: 30px;
-    text-align: right;
-}
-
-.btn-edit {
+.btn-edit{
     display: inline-block;
-    padding: 10px 25px;
-    background-color: #4CAF50;
+
+    background: linear-gradient(135deg,#4CAF50,#2e7d32);
     color: white;
-    border-radius: 6px;
+
+    padding: 12px 28px;
+
+    border-radius: 10px;
+
     text-decoration: none;
     font-weight: 600;
-    transition: 0.2s ease;
+
+    box-shadow: 0 6px 16px rgba(76,175,80,0.3);
+
+    transition: all 0.25s ease;
 }
 
-.btn-edit:hover {
-    background-color: #3e8e41;
+.btn-edit:hover{
     transform: translateY(-2px);
-}
-
-.text-avt {
-    margin-top: 12px;
-    font-size: 18px;
+    box-shadow: 0 10px 22px rgba(76,175,80,0.35);
 }

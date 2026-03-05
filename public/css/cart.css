@@ -1,124 +1,15 @@
+/* =========================
+   CART PAGE WRAPPER
+========================= */
 .cart-page {
-    max-width: 1000px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 1100px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
 }
 
-/* TABLE */
-.cart-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-}
-
-.cart-table th {
-    background: #f5f5f5;
-    padding: 15px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.cart-table td {
-    padding: 18px;
-    border-bottom: 1px solid #eee;
-    font-size: 14px;
-}
-
-.cart-table img {
-    width: 70px;
-    border-radius: 8px;
-}
-
-/* HOVER EFFECT */
-.cart-table tr:hover {
-    background: #fafafa;
-}
-
-/* TOTAL BOX */
-.cart-total {
-    text-align: right;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-/* BUTTONS */
-.btn-remove {
-    background: #ff5252;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-remove:hover {
-    background: #e53935;
-}
-
-.btn-clear {
-    background: #757575;
-    color: white;
-    padding: 8px 18px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-clear:hover {
-    background: #424242;
-}
-
-.cart-table th:first-child,
-.cart-table td:first-child {
-    width: 60px;
-    text-align: center;
-}
-
-.product-check,
-#check-all {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.cart-table td:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cart-table td,
-.cart-table th {
-    text-align: center;
-    vertical-align: middle;
-}
-
-.cart-table td:nth-child(2) {
-    text-align: center;
-}
-
-.cart-table td:nth-child(2) img {
-    display: block;
-    margin: 0 auto;
-}
-
-.cart-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.cart-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* HEADER CART */
+/* =========================
+   HEADER
+========================= */
 .cart-header {
     display: flex;
     justify-content: space-between;
@@ -127,44 +18,170 @@
 }
 
 .cart-header h2 {
-    margin: 0;
+    font-size: 24px;
+    color: #2e7d32;
 }
 
-/* Đẩy nút ra ngoài cùng bên phải */
+/* =========================
+   DELETE BUTTON
+========================= */
 .delete-selected-btn {
-    margin-left: auto;   /* 👈 Quan trọng */
-    background: #ff5252;
-    color: white;
+    background: #f44336;
     border: none;
-    padding: 8px 18px;
-    border-radius: 8px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .delete-selected-btn:hover {
-    background: #e53935;
+    background: #d32f2f;
+    transform: translateY(-3px);
 }
 
-/* SUMMARY ROW */
+/* =========================
+   TABLE
+========================= */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.cart-table thead {
+    background: #f1f8f4;
+}
+
+.cart-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cart-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.cart-table tbody tr {
+    transition: 0.3s ease;
+}
+
+.cart-table tbody tr:hover {
+    background: #f9fdf9;
+    transform: scale(1.01);
+}
+
+/* ẢNH */
+.cart-table img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+.product-check,
+#check-all {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4CAF50;
+}
+
+/* =========================
+   SUMMARY
+========================= */
 .cart-summary {
+    margin-top: 30px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
 }
 
-/* Nút đặt hàng */
+.cart-summary h3 {
+    font-size: 20px;
+    color: #2e7d32;
+}
+
+#total-price {
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+/* =========================
+   CHECKOUT BUTTON
+========================= */
 .btn-checkout {
-    background: #28a745;
+    background: linear-gradient(135deg, #4CAF50, #43a047);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
     color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(76,175,80,0.3);
 }
 
 .btn-checkout:hover {
-    background: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(76,175,80,0.4);
+}
+
+/* =========================
+   EMPTY CART
+========================= */
+.cart-page p {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table,
+    .cart-table tbody,
+    .cart-table tr,
+    .cart-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table tr {
+        margin-bottom: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .cart-table td {
+        border: none;
+        padding: 8px 0;
+    }
+
+    .cart-summary {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

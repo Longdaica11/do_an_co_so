@@ -71,51 +71,6 @@ body {
     color: #1e7e34;
 }
 
-/* ================= PRODUCT CONTAINER ================= */
-.product-container {
-    background: transparent;
-}
-
-/* ================= PRODUCT HEADER ================= */
-.product-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.product-header h2 {
-    color: #1e7e34;
-    font-weight: 600;
-}
-
-/* ================= ADD BUTTON ================= */
-.btn-add {
-    background: linear-gradient(135deg, #28a745, #1e7e34);
-    color: white;
-    padding: 10px 22px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(40,167,69,0.3);
-}
-
-.btn-add:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(40,167,69,0.4);
-}
-
-/* ================= SUCCESS MESSAGE ================= */
-.success-message {
-    background: #d4edda;
-    color: #155724;
-    padding: 12px 18px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border-left: 5px solid #28a745;
-}
-
 /* ================= TABLE ================= */
 table {
     width: 100%;
@@ -148,30 +103,6 @@ table tr {
 
 table tbody tr:hover {
     background: #f2fff5;
-}
-
-/* ================= ACTION BUTTONS ================= */
-.btn-edit {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-right: 10px;
-}
-
-.btn-edit:hover {
-    text-decoration: underline;
-}
-
-.btn-delete {
-    background: none;
-    border: none;
-    color: red;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.btn-delete:hover {
-    text-decoration: underline;
 }
 
 /* ================= EMPTY ROW ================= */
@@ -305,7 +236,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* ===== MAIN ===== */
@@ -406,4 +337,23 @@ body {
 
 .dropdown-menu button {
     color: #e53935;
+}
+
+.sidebar ul li a {
+    position: relative;
+}
+
+.sidebar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    bottom: 6px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover::after {
+    width: calc(100% - 24px);
 }

@@ -16,16 +16,18 @@
             <div class="form-flex">
 
                 <!-- ================= LEFT: IMAGE ================= -->
-                <div class="image-preview-box">
+                <div class="image-upload-wrapper">
 
-                    <img id="preview-image" src="#" alt="Preview">
+                    <div class="image-preview-box">
+                        <img id="preview-image" src="#" alt="Preview">
+                    </div>
 
                     <input type="file"
-                           id="image"
-                           name="image"
-                           accept="image/*"
-                           hidden
-                           onchange="previewImage(event)">
+                        id="image"
+                        name="image"
+                        accept="image/*"
+                        hidden
+                        onchange="previewImage(event)">
 
                     <button type="button"
                             class="btn-upload"
@@ -78,11 +80,21 @@
 
 <script>
 function previewImage(event) {
+
+const file = event.target.files[0];
+const preview = document.getElementById("preview-image");
+
+if(file){
     const reader = new FileReader();
-    reader.onload = function(){
-        document.getElementById('preview-image').src = reader.result;
+
+    reader.onload = function(e){
+        preview.src = e.target.result;
+        preview.style.display = "block";
     }
-    reader.readAsDataURL(event.target.files[0]);
+
+    reader.readAsDataURL(file);
+}
+
 }
 </script>
 

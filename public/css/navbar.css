@@ -5,7 +5,7 @@
 
 /* ===== CONTAINER ===== */
 .nav-container {
-    width: 1200px;
+    width: 1300px;
     margin: auto;
 
     background: linear-gradient(135deg, #4CAF50, #43a047);
@@ -154,4 +154,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.nav-menu li a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-order,
+.cart-link {
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.btn-order:hover,
+.cart-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.search-box {
+    transition: all 0.3s ease;
+}
+
+.search-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.nav-menu li a,
+.btn-order,
+.cart-link,
+.search-box {
+    will-change: transform;
 }

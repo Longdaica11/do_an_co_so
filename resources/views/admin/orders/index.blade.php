@@ -32,7 +32,7 @@
             <tr>
                 <td>#{{ $order->id }}</td>
                 <td>{{ $order->user->name ?? 'N/A' }}</td>
-                <td>{{ number_format($order->total) }} đ</td>
+                <td>{{ number_format($order->total_price) }} đ</td>
                 <td>
                     @if($order->status == 'pending')
                         <span class="pending">Chờ xử lý</span>

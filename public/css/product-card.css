@@ -1,60 +1,74 @@
-/* ===== PRODUCT SECTION ===== */
-
-.product-section {
-    margin-top: 50px;
-}
-/* GRID */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 30px;
-}
-
-/* CARD */
+/* ===============================
+   PRODUCT CARD
+================================ */
 .product-card {
     display: block;
-    text-decoration: none;
-    background: #fff;
-    border-radius: 16px;
+    background: #ffffff;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+
+    transition: all 0.35s ease;
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.05),
+        0 3px 8px rgba(0,0,0,0.04);
+
+    border: 1px solid rgba(76, 175, 80, 0.08);
 }
 
+/* Hover nổi lên */
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.12),
+        0 10px 20px rgba(0,0,0,0.08);
 }
 
-/* IMAGE */
+/* ===============================
+   IMAGE
+================================ */
 .product-image {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    transition: 0.3s ease;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
+/* Zoom ảnh khi hover */
 .product-card:hover .product-image {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* CONTENT */
+/* ===============================
+   CONTENT
+================================ */
 .product-card-content {
-    padding: 15px 18px;
+    padding: 18px;
 }
 
-/* NAME */
+/* Tên sản phẩm */
 .product-name {
     font-size: 16px;
-    font-weight: 500;
-    color: #333;
+    font-weight: 600;
     margin-bottom: 10px;
-    min-height: 40px;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-/* PRICE */
+/* Giá */
 .product-price {
     font-size: 18px;
     font-weight: 700;
-    color: #2e7d32; /* xanh gym */
+    color: #2e7d32;
+
+    background: rgba(76,175,80,0.08);
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 12px;
 }

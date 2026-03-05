@@ -1,154 +1,211 @@
-/* ================= CREATE PRODUCT PAGE ================= */
+/* ===== WRAPPER ===== */
 
-.form-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+.form-wrapper{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
 }
 
-.form-box {
-    width: 1050px;
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+/* ===== FORM BOX ===== */
+
+.form-box{
+    width:900px;
+    background:white;
+    padding:35px;
+    border-radius:18px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    transition:all 0.35s ease;
 }
 
-.form-box h2 {
-    text-align: center;
-    color: #1e7e34;
-    margin-bottom: 40px;
-    font-size: 26px;
+.form-box:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-/* ================= FLEX LAYOUT ================= */
+/* ===== TITLE ===== */
 
-.form-flex {
-    display: flex;
-    gap: 70px;
-    align-items: flex-start; /* QUAN TRỌNG: không căn giữa dọc */
+.form-box h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#2e7d32;
+    font-weight:600;
 }
 
-/* ================= LEFT IMAGE ================= */
+/* ===== FLEX ===== */
 
-.image-preview-box {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form-flex{
+    display:flex;
+    gap:40px;
 }
 
-.image-preview-box img {
-    width: 100%;
-    max-width: 340px;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 2px dashed #28a745;
-    padding: 8px;
-    margin-bottom: 20px;
-    background: #f9fff9;
+/* ================= IMAGE SECTION ================= */
+
+.image-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-/* Upload button dưới ảnh */
-.btn-upload {
-    width: 100%;
-    max-width: 340px;
-    padding: 14px;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #28a745, #1e7e34);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 15px rgba(40,167,69,0.25);
-    text-align: center;
+/* ===== IMAGE BOX ===== */
+
+.image-preview-box{
+    width:320px;
+    height:320px;
+
+    border:2px dashed #ddd;
+    border-radius:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#fafafa;
+
+    transition:all 0.3s ease;
 }
 
-.btn-upload:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(40,167,69,0.35);
+.image-preview-box:hover{
+    border-color:#43a047;
+    background:#f4fff6;
+    transform:translateY(-3px);
 }
 
-/* ================= RIGHT FORM ================= */
+/* ===== IMAGE ===== */
 
-.form-info {
-    width: 60%;
+.image-preview-box img{
+    width:230px;
+    height:230px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
-.form-group {
-    margin-bottom: 22px;
-    display: flex;
-    flex-direction: column;
+/* ===== BUTTON UPLOAD ===== */
+
+.btn-upload{
+    margin-top:15px;
+
+    padding:10px 22px;
+
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#43a047,#2e7d32);
+    color:white;
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:all 0.3s ease;
 }
 
-.form-group label {
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #1e7e34;
+.btn-upload:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(46,125,50,0.3);
 }
+
+/* ================= FORM INFO ================= */
+
+.form-info{
+    flex:1;
+}
+
+/* ===== GROUP ===== */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:20px;
+}
+
+/* ===== LABEL ===== */
+
+.form-group label{
+    margin-bottom:7px;
+    font-weight:500;
+    color:#2e7d32;
+}
+
+/* ===== INPUT ===== */
 
 .form-group input,
 .form-group select,
-.form-group textarea {
-    padding: 12px 14px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    outline: none;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    background: #fff;
+.form-group textarea{
+    padding:12px 14px;
+
+    border-radius:10px;
+    border:1px solid #ddd;
+
+    font-size:14px;
+
+    transition:all 0.25s ease;
 }
 
-.form-group textarea {
-    resize: none;
-    min-height: 100px;
+/* ===== HOVER ===== */
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover{
+    border-color:#66bb6a;
 }
+
+/* ===== FOCUS ===== */
 
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus {
-    border-color: #28a745;
-    box-shadow: 0 0 0 3px rgba(40,167,69,0.2);
+.form-group textarea:focus{
+    outline:none;
+    border-color:#43a047;
+    box-shadow:0 0 0 3px rgba(67,160,71,0.2);
+    transform:translateY(-1px);
 }
 
-/* ================= SUBMIT BUTTON ================= */
+/* ===== TEXTAREA ===== */
 
-.btn-submit {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #28a745, #1e7e34);
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 15px;
-    box-shadow: 0 6px 15px rgba(40,167,69,0.25);
+.form-group textarea{
+    min-height:100px;
+    resize:none;
 }
 
-.btn-submit:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(40,167,69,0.35);
+/* ================= BUTTON SUBMIT ================= */
+
+.btn-submit{
+    width:100%;
+    padding:13px;
+
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#43a047,#2e7d32);
+
+    color:white;
+    font-weight:600;
+    font-size:15px;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    transition:all 0.3s ease;
+}
+
+.btn-submit:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(46,125,50,0.35);
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 992px) {
-    .form-flex {
-        flex-direction: column;
-        gap: 40px;
+@media(max-width:900px){
+
+    .form-flex{
+        flex-direction:column;
+        align-items:center;
     }
 
-    .image-preview-box,
-    .form-info {
-        width: 100%;
+    .image-preview-box{
+        width:100%;
+        height:250px;
     }
 
-    .btn-upload,
-    .image-preview-box img {
-        max-width: 100%;
-    }
 }

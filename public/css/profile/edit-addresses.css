@@ -1,0 +1,177 @@
+/* ===== WRAPPER ===== */
+
+.profile-content-wrapper{
+    display:flex;
+    justify-content:center;
+    padding:40px 0;
+}
+
+
+/* ===== CARD ===== */
+
+.profile-card{
+
+    width:520px;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    transition:all .3s ease;
+}
+
+
+/* ===== TITLE ===== */
+
+.page-title{
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#333;
+
+    margin-bottom:30px;
+}
+
+
+/* ===== FORM ===== */
+
+.address-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+
+/* ===== GROUP ===== */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+}
+
+
+.form-group label{
+
+    font-size:14px;
+
+    color:#666;
+
+    font-weight:500;
+}
+
+
+/* ===== INPUT ===== */
+
+.form-group input{
+
+    width:100%;
+
+    padding:13px 16px;
+
+    border-radius:12px;
+
+    border:1px solid #e0e0e0;
+
+    font-size:14px;
+
+    background:#fafafa;
+
+    outline:none;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+}
+
+
+/* hover */
+
+.form-group input:hover{
+
+    transform:translateY(-2px);
+
+    border-color:#c8e6c9;
+
+    background:#fff;
+
+    box-shadow:0 6px 14px rgba(0,0,0,0.08);
+}
+
+
+/* focus */
+
+.form-group input:focus{
+
+    transform:translateY(-2px);
+
+    border-color:#4CAF50;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 0 3px rgba(76,175,80,0.15),
+        0 8px 18px rgba(0,0,0,0.08);
+}
+
+
+/* ===== BUTTON ===== */
+
+.save-btn{
+
+    margin-top:10px;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#4CAF50;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+}
+
+
+/* hover */
+
+.save-btn:hover{
+
+    background:#43a047;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 14px rgba(0,0,0,0.1);
+}
+
+
+/* click */
+
+.save-btn:active{
+
+    transform:scale(.97);
+}
