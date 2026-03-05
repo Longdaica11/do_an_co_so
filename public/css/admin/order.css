@@ -1,0 +1,28 @@
+
+
+.confirmed {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.btn-confirm {
+    padding: 6px 12px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-confirm:hover {
+    background: #2e7d32;
+}
+
+.success-message {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}

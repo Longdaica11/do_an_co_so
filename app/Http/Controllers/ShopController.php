@@ -4,23 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
     // ==============================
     // TRANG CHỦ / SHOP
     // ==============================
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()
+        $keyword = $request->keyword;
+    
+        $products = Product::with('category')
+            ->when($keyword, function ($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%');
+            })
             ->paginate(8);
-
-        $categories = Category::with('products')->get();
-
-        return view('home', [
-            'products' => $products,
-            'categories' => $categories
-        ]);
+    
+        $categories = Category::all();
+    
+        return view('home', compact('products', 'categories'));
     }
 
     // ==============================
@@ -29,16 +32,12 @@ class ShopController extends Controller
     public function category($id)
     {
         $category = Category::findOrFail($id);
-
-        $products = $category->products()
-            ->latest()
-            ->paginate(8);
-
-        return view('home', [
-            'categories' => Category::with('products')->get(),
-            'products' => $products,
-            'currentCategory' => $category
-        ]);
+    
+        $products = Product::where('category_id', $id)->paginate(8);
+    
+        $categories = Category::all();
+    
+        return view('home', compact('products', 'categories', 'category'));
     }
 
     // ==============================

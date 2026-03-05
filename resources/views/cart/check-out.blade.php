@@ -86,10 +86,24 @@
     <div class="checkout-footer">
         <h3>Tổng tiền: {{ number_format($total) }} đ</h3>
 
-        <button class="btn-order">
-            Đặt hàng
-        </button>
+        <form action="{{ route('checkout.placeOrder') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn-order">
+                Đặt hàng
+            </button>
+        </form>
     </div>
+
+    @if(session('success'))
+        <div id="success-toast" class="success-toast">
+            <div class="toast-icon">✔</div>
+            <div class="toast-content">
+                <strong>Thành công!</strong>
+                <p>{{ session('success') }}</p>
+            </div>
+            <div class="toast-progress"></div>
+        </div>
+    @endif
 
 </div>
 
@@ -98,6 +112,22 @@ function toggleAddressList() {
     const list = document.getElementById('address-list');
     list.style.display = list.style.display === 'none' ? 'block' : 'none';
 }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toast = document.getElementById("success-toast");
+
+    if (toast) {
+        setTimeout(() => {
+            toast.style.animation = "slideOut 0.5s ease forwards";
+        }, 3000);
+
+        setTimeout(() => {
+            toast.remove();
+        }, 3500);
+    }
+});
 </script>
 
 @endsection

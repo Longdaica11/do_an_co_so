@@ -54,10 +54,18 @@
 
     <div class="product-section">
 
+        {{-- 🎯 TIÊU ĐỀ --}}
         <h2 class="section-title">
-            {{ $currentCategory->name ?? 'Tất cả sản phẩm' }}
+            @if(request('keyword'))
+                Kết quả tìm kiếm cho: "{{ request('keyword') }}"
+            @elseif(isset($currentCategory))
+                {{ $currentCategory->name }}
+            @else
+                Tất cả sản phẩm
+            @endif
         </h2>
 
+        {{-- 🎯 GRID --}}
         <div class="product-grid">
             @forelse($products as $product)
                 <x-product-card :product="$product"/>
@@ -66,11 +74,18 @@
             @endforelse
         </div>
 
+        {{-- 🎯 PAGINATION --}}
         @if($products instanceof \Illuminate\Pagination\LengthAwarePaginator)
             <div class="pagination-wrapper mt-4 d-flex justify-content-center">
-                {{ $products->links('pagination::bootstrap-5') }}
+                {{ $products->appends(request()->query())->links('pagination::bootstrap-5') }}
             </div>
         @endif
+
+        @isset($categories)
+            @foreach($categories as $category)
+                ...
+            @endforeach
+        @endisset
 
     </div>
 

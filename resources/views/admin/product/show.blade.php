@@ -39,13 +39,18 @@
                 {{ $product->description }}
             </div>
 
-            <div class="quantity-box">
-                <label>Số lượng:</label>
-                <input type="number" value="1" min="1">
-            </div>
-
             <form action="{{ route('cart.add', $product->id) }}" method="POST">
                 @csrf
+
+                <div class="quantity-box">
+                    <label>Số lượng:</label>
+                    <input type="number"
+                        name="quantity"
+                        value="1"
+                        min="1"
+                        required>
+                </div>
+
                 <button type="submit" class="btn-add-cart">
                     Thêm vào giỏ hàng
                 </button>

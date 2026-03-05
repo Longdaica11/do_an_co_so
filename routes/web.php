@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\UserProductController;
 
 
 /*
@@ -176,3 +178,30 @@ Route::post('/checkout', [CartController::class, 'goToCheckout'])
 
 Route::post('/change-address/{id}', [CheckoutController::class, 'changeAddress'])
     ->name('checkout.changeAddress');
+
+Route::post('/place-order', [CheckoutController::class, 'placeOrder'])
+    ->name('checkout.placeOrder')
+    ->middleware('auth');
+
+Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+
+    Route::get('/orders', [OrderController::class, 'index'])
+        ->name('admin.orders');
+
+    Route::post('/orders/{id}/confirm', [OrderController::class, 'confirm'])
+        ->name('admin.orders.confirm');
+
+});
+
+Route::get('/my-orders', [App\Http\Controllers\OrderController::class, 'myOrders'])
+    ->name('orders.my')
+    ->middleware('auth');
+
+Route::get('/my-orders', [OrderController::class, 'myOrders'])
+        ->name('orders.my')
+        ->middleware('auth');
+
+Route::get('/search', [UserProductController::class, 'search'])
+            ->name('products.search');

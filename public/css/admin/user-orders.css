@@ -1,0 +1,40 @@
+.my-orders-container {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.my-orders-container h2 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #4CAF50;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.pending {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.confirmed {
+    color: #4CAF50;
+    font-weight: bold;
+}

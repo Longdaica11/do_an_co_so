@@ -22,8 +22,7 @@
             <li><a href="{{ route('admin.products.index') }}">Quản lí sản phẩm</a></li>
             <li><a href="{{ route('admin.categories.index') }}">Quản lí danh mục</a></li>
             <li><a href="{{ route('admin.users.index') }}">Danh sách người dùng</a></li>
-            <li><a href="#">Quản lí đơn hàng</a></li>
-            <li><a href="#">Tin nhắn</a></li>
+            <li><a href="{{ route('admin.orders') }}">Quản lý đơn hàng</a></li>
         </ul>
     </div>
 

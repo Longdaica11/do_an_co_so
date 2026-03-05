@@ -20,23 +20,25 @@ class CartController extends Controller
     }
 
     // THÊM VÀO GIỎ
-    public function add(Product $product)
+    public function add(Request $request, Product $product)
     {
+        $quantity = (int) $request->input('quantity', 1);
+    
         $cart = Cart::where('user_id', Auth::id())
             ->where('product_id', $product->id)
             ->first();
-
+    
         if ($cart) {
-            $cart->quantity += 1;
+            $cart->quantity += $quantity;
             $cart->save();
         } else {
             Cart::create([
                 'user_id' => Auth::id(),
                 'product_id' => $product->id,
-                'quantity' => 1
+                'quantity' => $quantity
             ]);
         }
-
+    
         return back()->with('success', 'Đã thêm vào giỏ hàng!');
     }
 
