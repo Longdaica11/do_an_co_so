@@ -33,17 +33,15 @@
         </div>
 
         <ul class="sidebar-list">
-            @foreach($categories as $category)
-                @if($category->products->count() > 0)
-                    <li>
-                        <a href="{{ route('category.show', $category->id) }}"
-                           class="category-link 
-                           {{ isset($currentCategory) && $currentCategory->id == $category->id ? 'active-category' : '' }}">
-                            {{ $category->name }}
-                        </a>
-                    </li>
-                @endif
-            @endforeach
+        @foreach($categories as $category)
+            <li>
+                <a href="{{ route('category.show', $category->id) }}"
+                class="category-link 
+                {{ isset($currentCategory) && $currentCategory->id == $category->id ? 'active-category' : '' }}">
+                    {{ $category->name }}
+                </a>
+            </li>
+        @endforeach
         </ul>
     </div>
 

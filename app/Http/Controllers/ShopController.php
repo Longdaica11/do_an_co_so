@@ -21,11 +21,10 @@ class ShopController extends Controller
             })
             ->paginate(8);
     
-        $categories = Category::all();
+        $categories = Category::with('products')->get();
     
         return view('home', compact('products', 'categories'));
     }
-
     // ==============================
     // LỌC THEO DANH MỤC
     // ==============================
@@ -33,11 +32,16 @@ class ShopController extends Controller
     {
         $category = Category::findOrFail($id);
     
-        $products = Product::where('category_id', $id)->paginate(8);
+        $products = Product::where('category_id', $id)
+                            ->paginate(8);
     
         $categories = Category::all();
     
-        return view('home', compact('products', 'categories', 'category'));
+        return view('home', [
+            'products' => $products,
+            'categories' => $categories,
+            'currentCategory' => $category
+        ]);
     }
 
     // ==============================
